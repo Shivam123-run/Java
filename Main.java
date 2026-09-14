@@ -1,25 +1,61 @@
-public class Main {
-	public static void main(String[] args) {
-	Calculator cal = new Calculator();
-	int num1 = ConsoleInput.getInteger();
-	int num2 = ConsoleInput.getInteger();
-	int result_add = cal.add(num1, num2);
-	System.out.println("The addition is : " + result_add);
-	int resultsub = cal.substract(num1, num2);
-	System.out.println("The substraction is : " + resultsub);
-	int resultmul = cal.multiply(num1, num2);
-	System.out.println("The multiplication is : " + resultmul);
-	int resultdiv = cal.divide(num1, num2);
-	System.out.println("The division is : " + resultdiv);
-	float fnum1 = ConsoleInput.getfloat();
-	float fnum2 = ConsoleInput.getfloat();
-	float fresult_add = cal.add(fnum1, fnum2);
-	System.out.println("The addition is : " + fresult_add);
-	float fresultsub = cal.substract(fnum1, fnum2);
-	System.out.println("The substraction is : " + fresultsub);
-	float fresultmul = cal.multiply(fnum1, fnum2);
-	System.out.println("The multiplication is : " + fresultmul);
-	float fresultdiv = cal.divide(fnum1, fnum2);
-	System.out.println("The division is : " + fresultdiv);
-	}
-}
+public class Main{
+    public static void main(String[] args) {
+        Date d = new Date();
+        int choice;
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("                      Date Menu      ");
+            System.out.println("================================");
+            System.out.println("1. Set Date");
+            System.out.println("2. Add Days");
+            System.out.println("3. Add Months");
+            System.out.println("4. Add Years");
+            System.out.println("5. Display");
+            System.out.println("6. Compare Dates (not implement)");
+            System.out.println("7. Exit");
+            System.out.println("================================");
+            System.out.println("Enter your choice : ");
+            choice = ConsoleInput.getInteger();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter Day : ");
+                    int day = ConsoleInput.getInteger();
+                    System.out.println("Enter Month : ");
+                    int month = ConsoleInput.getInteger();
+                    System.out.println("Enter Year : ");
+                    int year = ConsoleInput.getInteger();
+                    d.setDate(day, month, year);
+                    System.out.println("Date set successfully.");
+                    break;
+                case 2:
+                    System.out.println("Enter number of days : ");
+                    int days = ConsoleInput.getInteger();
+                    d.addDays(days);
+                    System.out.println("Days added successfully.");
+                    break;
+                case 3:
+                    System.out.println("Enter number of months : ");
+                    int months = ConsoleInput.getInteger();
+                    d.addMonths(months);
+                    System.out.println("Months added successfully.");
+                    break;
+                case 4:
+                    System.out.println("Enter number of years : ");
+                    int years = ConsoleInput.getInteger();
+                    d.addYears(years);
+                    System.out.println("Years added successfully.");
+                    break;
+                case 5:
+                    d.display();
+                    break;
+                case 6:
+                    System.out.println( "Compare Dates is not implemented.");
+                    break;
+                case 7:
+                    System.out.println("Program Ended.");
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        } 
+    }
